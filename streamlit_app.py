@@ -1,4 +1,5 @@
 
+
 import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.models import load_model
@@ -37,7 +38,7 @@ def generate_explanation(img_path, model_prediction, confidence):
    Let's think step by step about this. Verify step by step.
   """
 
-  img = PIL.Image.fromarray(img_array.astype('uint8'))
+  img = PIL.Image.fromarray(img_array)
 
   model = genai.GenerativeModel(model_name="gemini-1.5-flash")
   response = model.generate_content([prompt, img])
