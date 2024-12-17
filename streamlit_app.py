@@ -48,7 +48,7 @@ def generate_explanation(img_array, model_prediction, confidence):
 
 
 #Create Saliency Map
-@st.cache(allow_output_mutation=True) 
+@st.cache_data
 def generate_saliency_map(model, img_array, class_index, img_size):
   with tf.GradientTape() as tape:
     img_tensor = tf.convert_to_tensor(img_array)
